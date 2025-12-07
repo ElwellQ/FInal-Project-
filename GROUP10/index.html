@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ESP32-CAM Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="sidebar-brand">ESP32-CAM</div>
+    <a href="#" class="sidebar-link active">Dashboard</a>
+    <a href="#" class="sidebar-link">Logs</a>
+    <a href="#" class="sidebar-link">Zones</a>
+    <div class="sidebar-bottom">
+        <div class="sidebar-user">Admin<br><small>admin@example.com</small></div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <header class="topbar">
+        <h1>ESP32-CAM Noise Monitoring System</h1>
+    </header>
+
+    <div class="container">
+
+        <!-- Servo Control Card -->
+        <div class="card">
+            <h2>Servo Control</h2>
+            <div class="controls">
+                <input type="range" min="0" max="180" id="servoSlider" value="90">
+                <span id="servoVal">90°</span>
+            </div>
+            <div class="status" id="status">Status: Not connected</div>
+        </div>
+
+        <!-- Sound Level Card -->
+        <div class="card">
+            <h2>Noise Level</h2>
+
+            <div class="decibel">
+                <div id="decibelBar"></div>
+            </div>
+            <span id="dBText" class="dB-label">Quiet</span>
+        </div>
+
+        <!-- Camera Module -->
+        <div class="card">
+            <h2>Live Camera Feed</h2>
+            <p class="sub">Automatically shows for 7 seconds when loud noise is detected.</p>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <button class="button" onclick="showCamera()">Sho Camera Now</button>
+                <button class="button" onclick="closeCamera()">Close Camera</button>
+            </div>
+
+            <div class="camera-feed" id="cameraContainer" style="display:none;"></div>
+        </div>
+
+        <!-- Logs Example -->
+        <div class="logs">
+            <h3>Recent Logs</h3>
+            <table>
+                <tr><th>Time</th><th>Noise (dB)</th><th>Action</th></tr>
+                <tr><td>10:01 AM</td><td>65</td><td>None</td></tr>
+            </table>
+        </div>
+
+        <!-- Zones Example -->
+        <div class="zones">
+            <div class="zone-card">
+                <h4>Zone 1</h4>
+                <div class="noise-level">55 dB</div>
+            </div>
+            <div class="zone-card">
+                <h4>Zone 2</h4>
+                <div class="noise-level">72 dB</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="dashboard.js?v=<?php echo time(); ?>"></script>
+</body>
+</html>

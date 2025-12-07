@@ -1,0 +1,647 @@
+/* --- Global Styling --- */
+body {
+    font-family: "Inter", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #222;
+}
+
+/* Header */
+.topbar, header {
+    position: fixed;
+    top: 0;
+    left: 220px;
+    right: 0;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    text-align: center;
+    z-index: 50;
+    box-sizing: border-box;
+}
+
+.brand-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.brand-text {
+    text-align: center;
+}
+
+/* Header brand logo size */
+.brand img {
+    width: 50px;      /* adjust size here */
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Resize logo inside sidebar */
+.sidebar-brand img {
+    width: 40px;       /* adjust to the size you want */
+    height: 40px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;    /* keeps it centered */
+}
+
+
+
+.topbar h1, header .brand-name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #222;
+}
+
+.brand-sub {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 100%;
+    margin: 80px 112px 10px 392px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Cards */
+.card, .logs, .zone-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card h2, .card h3, .card h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.sub {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #0fa47f;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background: linear-gradient(90deg, #0fa47f, #08b38b);
+    color: #fff;
+    transform: translateX(3px);
+    box-shadow: 0 2px 8px rgba(15, 164, 127, 0.3);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.sidebar-user {
+    font-weight: 600;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.sidebar-user small {
+    font-weight: 400;
+    color: #888;
+}
+
+/* Logout button */
+.sidebar-link.logout {
+    background: white;
+    color: #ff4d4f;
+    border: 2px solid #ff4d4f;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 10px 15px;
+    margin: 0;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.sidebar-link.logout:hover {
+    background: #ff4d4f;
+    color: white;
+    transform: none;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+table th, table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+table th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+table tr:hover {
+    background: #f0f0f0;
+}
+
+/* Buttons */
+.btn, .button {
+    background: #0fa47f;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover, .button:hover {
+    background: #0c8e6d;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #0fa47f;
+    border: 2px solid #0fa47f;
+}
+
+.btn-ghost:hover {
+    background: #0fa47f;
+    color: white;
+}
+
+/* Slider */
+input[type=range] {
+    width: 280px;
+    appearance: none;
+    height: 5px;
+    background: #ddd;
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #0fa47f;
+    cursor: pointer;
+}
+
+#servoVal {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Status text */
+.status {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Noise bar */
+.decibel {
+    margin: 12px auto;
+    width: 90%;
+    height: 20px;
+    background: #e6e6e6;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#decibelBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00c853, #ffeb3b, #ff1744);
+    border-radius: 12px;
+    transition: width 0.2s ease-in-out;
+}
+
+.dB-label {
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+}
+
+/* Camera feed */
+.camera-feed {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 240px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.camera-feed iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Login box */
+.login-box {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box input[type=text], .login-box input[type=password] {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.login-box .btn {
+    width: 100%;
+}
+
+.login-box .error {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Forms in Zones/Logs consistent */
+form input[type=text], form select, form input[type=date] {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+}
+/* Login page background */
+.login-page {
+    background: url('images/bg.png') no-repeat right center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo inside login box */
+.login-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+/* === Background for all admin pages (dashboard, zones, logs) === */
+.admin-page {
+    background: 
+        url('images/bg.png') no-repeat right center fixed,
+        url('images/logo.png') no-repeat 20px 20px;
+    background-size: cover, 120px;
+    opacity: 0.97; /* slight transparency */
+    position: relative;
+}
+
+/* Make background dim so content is readable */
+.admin-page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.65); /* dim overlay */
+    z-index: -1;
+}
+
+/* Fix sidebar logout at bottom-left */
+.sidebar-bottom {
+    margin-top: auto !important;
+    padding: 20px;
+}
+
+.sidebar-link.logout {
+    width: 100%;
+    text-align: center;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablet and small devices (768px and below) */
+@media (max-width: 768px) {
+    /* Hide sidebar on mobile, show toggle button */
+    .sidebar {
+        position: fixed;
+        left: -220px;
+        width: 220px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Header adjusts for mobile */
+    .topbar, header {
+        left: 0;
+        padding: 15px;
+    }
+
+    .brand-name {
+        font-size: 20px;
+    }
+
+    .brand-sub {
+        font-size: 12px;
+    }
+
+    /* Container adjusts for mobile */
+    .container {
+        margin: 80px 10px 10px 10px;
+        padding: 15px;
+    }
+
+    /* Menu toggle button */
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 100;
+        background: #0fa47f;
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+        height: 2px;
+        background: white;
+        display: block;
+    }
+
+    /* Cards stack vertically */
+    .card, .logs, .zone-card {
+        margin-bottom: 12px;
+        padding: 12px;
+    }
+
+    .card h2, .card h3 {
+        font-size: 18px;
+    }
+
+    /* Table responsive */
+    table {
+        font-size: 13px;
+    }
+
+    table th, table td {
+        padding: 8px;
+    }
+
+    /* Slider width on mobile */
+    input[type=range] {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Login box mobile */
+    .login-box {
+        margin: 40px 15px;
+        max-width: 100%;
+    }
+
+    /* Form inputs full width */
+    form input[type=text], 
+    form input[type=password],
+    form select, 
+    form input[type=date] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .btn, .button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    /* Settings form responsive */
+    .settings-form {
+        padding: 15px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    /* Camera feed responsive */
+    .camera-feed {
+        height: 180px;
+        width: 240px;
+    }
+
+    .camera-feed iframe {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Servo & Buzzer grid responsive */
+    [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .card h2, .card h3 {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .topbar, header {
+        padding: 12px;
+    }
+
+    .container {
+        margin: 70px 8px 8px 8px;
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 6px;
+    }
+
+    .login-box {
+        margin: 30px 10px;
+        padding: 20px;
+    }
+
+    input[type=range] {
+        width: 90%;
+        max-width: 200px;
+    }
+
+    .sidebar-brand {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .sidebar-link {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Settings container */
+    .settings-container {
+        margin: 70px 8px 8px 8px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .help-text {
+        font-size: 11px;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .container {
+        margin: 80px 150px 10px 400px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    input[type=range] {
+        width: 350px;
+    }
+}
+
+/* Hide menu toggle on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        width: 220px;
+    }
+}
+
